@@ -1,6 +1,6 @@
 # TMVA vs TensorFlow Benchmark
 
-During the summer of 2018 (2 July - 24 August) I was working on benchmarking TMVA (a toolkit for machine learning, part of CERN's ROOT data analysis framework) versus TensorFlow on inference performance of Multi-Layered Perceptrons on CPUs for High-Energy Physics problems. This project was aimed to clear the roadmap of the TMVA project and understand better how to possition it in the HEP community.
+During the summer of 2018 (2 July - 24 August) I was working on benchmarking TMVA (a toolkit for machine learning, part of CERN's ROOT data analysis framework) versus TensorFlow on inference performance of Multi-Layered Perceptrons on CPUs for High-Energy Physics problems. This project was aimed to clear the roadmap of the TMVA project and understand better how to position it in the HEP community.
 
 <!--You can check the full report [here]() -->
 Also, there are slides, [here](https://slides.com/alexandruburlacu/benchmarking-tmva-package-against-tensorflow-on-event-by-event-inference-performance-on-multi-layered-perceptrons-for-hep)
@@ -10,7 +10,7 @@ Also, there are slides, [here](https://slides.com/alexandruburlacu/benchmarking-
 Check their installation/building instructions on GitHub, [here](https://github.com/root-project/root#building), the process is actually very easy, just check for the presence of all dependencies. For the benchmark was used ROOT v6.14.00.
 
 ### Docker Image
-Currently there's no `Dockerfile` to conteinerize the environment in which the benchmark was ran. But, you can follow the instructions from [this](https://www.pugetsystems.com/labs/hpc/Build-TensorFlow-CPU-with-MKL-and-Anaconda-Python-3-6-using-a-Docker-Container-1133/) blog post to make yourself one. Eventually, maybe, I will add a `Dockerfile` in this repository.
+Currently, there's no `Dockerfile` to containerize the environment in which the benchmark was run. But, you can follow the instructions from [this](https://www.pugetsystems.com/labs/hpc/Build-TensorFlow-CPU-with-MKL-and-Anaconda-Python-3-6-using-a-Docker-Container-1133/) blog post to make yourself one. Eventually, maybe, I will add a `Dockerfile` in this repository.
 
 ### Making Keras & TF models
 
@@ -25,7 +25,7 @@ Both scripts output CSV rows to stdout. To collect them, add `>> benchmark_resul
 
 ### Building the optimized TensorFlow
 
-To build tensorflow, you will need to git clone it and to have bazel installed (use `apt-get` on Ubuntu to install it).
+To build TensorFlow, you will need to git clone it and to have bazel installed (use `apt-get` on Ubuntu to install it).
 
 ```bash
 bazel build --config=opt --config=mkl \
@@ -44,7 +44,7 @@ Also, in order to tune MKL, run `source env.sh`, there are some environment vari
 
 1. Build the `libtensorflow` as a shared library
 ```
-# from within tensorflow repo
+# from within TensorFlow repo
 bazel build -c opt \
   --copt=-mavx --copt=-mavx2 --copt=-mavx512f \
   --copt=-mfma --copt=-msse4.2 --copt=-msse4.1 \
@@ -65,4 +65,5 @@ g++ --std=c++11 -o tf_cpp tf_cpp.cc \
 
 4. The `tf_cpp` executable should be ran like this `ls <path to proto files> | xargs -I @ ./tf_cpp <path to proto files>/@`
 
-Again, the CSV rows are outputed to stdout, so to collect them, add `>> benchmark_results.csv`.
+Again, the CSV rows are outputted to stdout, so to collect them, add `>> benchmark_results.csv`.
+
