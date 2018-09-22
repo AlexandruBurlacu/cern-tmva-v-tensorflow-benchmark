@@ -1,5 +1,17 @@
 # TMVA vs TensorFlow Benchmark
 
+During the summer of 2018 (2 July - 24 August) I was working on benchmarking TMVA (a toolkit for machine learning, part of CERN's ROOT data analysis framework) versus TensorFlow on inference performance of Multi-Layered Perceptrons on CPUs for High-Energy Physics problems. This project was aimed to clear the roadmap of the TMVA project and understand better how to possition it in the HEP community.
+
+<!--You can check the full report [here]() -->
+Also, there are slides, [here](https://slides.com/alexandruburlacu/benchmarking-tmva-package-against-tensorflow-on-event-by-event-inference-performance-on-multi-layered-perceptrons-for-hep)
+
+### Getting ROOT
+
+Check their installation/building instructions on GitHub, [here](https://github.com/root-project/root#building), the process is actually very easy, just check for the presence of all dependencies. For the benchmark was used ROOT v6.14.00.
+
+### Docker Image
+Currently there's no `Dockerfile` to conteinerize the environment in which the benchmark was ran. But, you can follow the instructions from [this](https://www.pugetsystems.com/labs/hpc/Build-TensorFlow-CPU-with-MKL-and-Anaconda-Python-3-6-using-a-Docker-Container-1133/) blog post to make yourself one. Eventually, maybe, I will add a `Dockerfile` in this repository.
+
 ### Making Keras & TF models
 
 1. Run the `python make_all_models.py` from models dir.
