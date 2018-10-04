@@ -2,7 +2,7 @@
 
 During the summer of 2018 (2 July - 24 August) I was working on benchmarking TMVA (a toolkit for machine learning, part of CERN's ROOT data analysis framework) versus TensorFlow on inference performance of Multi-Layered Perceptrons on CPUs for High-Energy Physics problems. This project was aimed to clear the roadmap of the TMVA project and understand better how to position it in the HEP community.
 
-<!--You can check the full report [here]() -->
+You can check the full report [here](https://cds.cern.ch/record/2641377)
 Also, there are slides, [here](https://slides.com/alexandruburlacu/benchmarking-tmva-package-against-tensorflow-on-event-by-event-inference-performance-on-multi-layered-perceptrons-for-hep)
 
 ### Getting ROOT
